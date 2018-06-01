@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "window.zoomLevel": -1,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "terminal.integrated.fontFamily": "'Ubuntu Mono derivative Powerline Regular'",
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.fontFamily": "DroidSansMonoForPowerline Nerd Font",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "gitlens.keymap": "none",
+    "gitlens.historyExplorer.enabled": true
+}
