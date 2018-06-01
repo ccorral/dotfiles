@@ -5,7 +5,36 @@ export ZSH=/Users/Corral/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+POWERLEVEL9K_BATTERY_CHARGING='yellow'
+POWERLEVEL9K_BATTERY_CHARGED='green'
+POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
+POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='\uf0da'
+#POWERLEVEL9K_VCS_GIT_ICON='\ue60a'
+
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
+#POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon battery context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time background_jobs ram virtualenv rbenv rvm)
+
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+
+#POWERLEVEL9K_CUSTOM_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
+
+POWERLEVEL9K_STATUS_VERBOSE=false
+
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+export DEFAULT_USER="$USER"
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,12 +112,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Default docker-machine to fix: Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+# eval "$(docker-machine env default)"
+
 # export NVM_DIR="/Users/Corral/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loåads nvm
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR=~/.nvm
+[ -s "~/.nvm/nvm.sh" ] && . "~/.nvm/nvm.sh"
 . "$(brew --prefix nvm)/nvm.sh"
+
+
 # docker
-if [ $(type -P docker-machine) ]; then eval $(docker-machine env default); fi
+#if [ $(type -P docker-machine) ]; then eval $(docker-machine env default); fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -98,3 +132,8 @@ if [ $(type -P docker-machine) ]; then eval $(docker-machine env default); fi
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# alias vim="/Users/user/Applications/MacVim.app/Contents/MacOS/Vim"
+export GOPATH=$HOME/go
+
+export PATH=$GOPATH/bin:$PATH
